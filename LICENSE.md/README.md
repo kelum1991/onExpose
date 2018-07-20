@@ -6,11 +6,27 @@ Event that is fired as soon as an element appears in the user's viewport.
 The event will only fire when the element comes in to view of the viewport, and out of view. It won't keep firing if the user scrolls and the element remains in view.
 
 ```
- $('div').on('inview', function(event, isInView) {
-      if (isInView) {
-        // element is now visible in the viewport
-      } else {
-        // element has gone out of viewport
-      }
-    });
+ jQuery("div").on('viewport', function(event, inVpPartial, inVpFull) {
+  if (inVpPartial == true) {
+
+  } else {
+
+  }
+ });
 ```
+
+If you would like to  keep firing if the user scrolls and the element remains in view
+
+```
+jQuery("div").on('viewport', {once:false}, function(event, inVpPartial, inVpFull) {
+ if (inVpPartial == true) {
+
+ } else {
+
+ }
+});
+```
+
+| Option        | Type          | Default  | Description                          |
+| ------------- |:-------------:| --------:| ------------------------------------:|
+| handler     | string | window   | You can set the element which user scrolls |                                     |
