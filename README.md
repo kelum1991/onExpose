@@ -31,7 +31,7 @@ jQuery("div").on('onExpose', {once:false}, function(event, inVpPartial, inVpFull
 
 
 | Option        | Type          | Default  | Description                          |
-| ------------- |:-------------:| --------:| -------------------------------------|
+| ------------- |:-------------:|:--------:| -------------------------------------|
 | handler       | string  | window   | You can set the element which user scrolls |
 | delay         | int     | 200      | Delaying (or polling) the event |
 | triggerBefore | int     | 0        | The event will be triggered before it's reached to viewport. This can be "+" or "-" value. |
