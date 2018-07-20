@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Expose JS Demo</title>
+<script src="js/jquery.min.js"></script>
+<script src="onExpose.js"></script>
+<link rel="stylesheet" type="text/css" href="css/layout.css">
+<script type="text/javascript">
+    
+    $(document).ready(function() {
+		jQuery(".module").on('onExpose', function(event, inVpPartial, inVpFull) {
+			if (inVpPartial == true) {
+				var el = jQuery(this),
+					image = el.data('image');
+				
+				el.addClass('inview');
+
+				if(image != null){
+					backgroundLoad (el, image);
+					el.removeAttr('data-image');
+				}
+			}
+		});
+
+
+        jQuery(".row").on('onExpose', function(event, inVpPartial, inVpFull) {
+            if (inVpPartial == true) {
+                var el = jQuery(this);
+                el.addClass('inview-row');
+            }
+        });
+    });
+
+    function backgroundLoad (el, image) {
+		var bgImage = new Image();
+		bgImage.src = image;
+
+		jQuery(bgImage).load(function(){
+			el.css('background-image', 'url(' + bgImage.src + ')');
+			el.find('.loader').fadeOut();
+		});
+	}
+</script>
+
+</head>
+
+<body>
+	<div id="container">
+    
+    <div class="left">
+        <div class="module test" data-image="https://static.pexels.com/photos/33045/lion-wild-africa-african.jpg">
+        	<span class="loader"></span>
+        </div>
+    </div>
+
+    <div class="left">
+        <div class="module sample" data-image="https://wallpaperscraft.com/image/abstraction_light_neon_glitter_97687_1920x1080.jpg">
+        	<span class="loader"></span>
+        </div>
+    </div>
+
+    <div class="left">
+        <div class="module test" data-image="http://s1.picswalls.com/wallpapers/2015/09/20/beautiful-hd-wallpaper-2015_111526537_269.jpg">
+        	<span class="loader"></span>
+        </div>
+    </div>
+
+    <div class="left">
+        <div class="module testing" data-image="https://images3.alphacoders.com/823/82317.jpg">
+        	<span class="loader"></span>
+        </div>
+    </div>
+
+    <div class="left">
+    <div class="module" data-image="http://hdfreewallpaper.net/wp-content/uploads/2015/10/nice-beautiful-hd-free-wallpapers-for-desktop.jpg">
+    	<span class="loader"></span>
+    </div>
+    </div>
+
+
+    <div class="left">
+    <div class="module" data-image="http://www.planwallpaper.com/static/images/dark-6-wallpaper-1080p-HD.jpg">
+    	<span class="loader"></span>
+    </div>
+    </div>
+
+    <div class="left">
+    <div class="module" data-image="https://i.ytimg.com/vi/xLOrfcqQS1Y/maxresdefault.jpg">
+    	<span class="loader"></span>
+    </div>
+    </div>
+
+    <div class="left">
+    <div class="module" data-image="http://www.intrawallpaper.com/static/images/beautiful-multi-colours-tortoise-wearing-a-blue-cap-saving-himself-with-rain-hd-wallpapers-1920-x-1200_RgtlPhx.jpg">
+    	<span class="loader"></span>
+    </div>
+    </div>
+
+    <div class="left">
+    <div class="module" data-image="http://www.intrawallpaper.com/static/images/dna_nano_tech-wide_dyyhibN.jpg">
+    	<span class="loader"></span>
+    </div>
+    </div>
+
+    <div class="left">
+    <div class="module" data-image="http://www.planwallpaper.com/static/images/Games-1080p-Wallpaper.jpg">
+    	<span class="loader"></span>
+    </div>
+    </div>
+
+
+    <div class="left">
+     <div class="module" data-image="http://s1.picswalls.com/wallpapers/2015/09/20/beautiful-hd-wallpaper-2015_111526537_269.jpg">
+        <span class="loader"></span>
+    </div>
+    </div>
+
+
+    <div class="left">
+    <div class="module" data-image="https://images3.alphacoders.com/823/82317.jpg">
+        <span class="loader"></span>
+    </div>
+    </div>
+
+
+    <div class="left">
+    <div class="module" data-image="http://hdfreewallpaper.net/wp-content/uploads/2015/10/nice-beautiful-hd-free-wallpapers-for-desktop.jpg">
+        <span class="loader"></span>
+    </div>
+    </div>
+
+    <div class="left">
+    <div class="module" data-image="http://www.planwallpaper.com/static/images/dark-6-wallpaper-1080p-HD.jpg">
+        <span class="loader"></span>
+    </div>
+    </div>
+
+    <div class="left">
+     <div class="module" data-image="http://www.planwallpaper.com/static/images/dark-6-wallpaper-1080p-HD.jpg">
+        <span class="loader"></span>
+    </div>
+    </div>
+
+    <div class="left">
+    <div class="module" data-image="https://i.ytimg.com/vi/xLOrfcqQS1Y/maxresdefault.jpg">
+        <span class="loader"></span>
+    </div>
+    </div>
+
+    <div class="left">
+    <div class="module" data-image="http://www.intrawallpaper.com/static/images/beautiful-multi-colours-tortoise-wearing-a-blue-cap-saving-himself-with-rain-hd-wallpapers-1920-x-1200_RgtlPhx.jpg">
+        <span class="loader"></span>
+    </div>
+    </div>
+
+
+    <div class="left">
+    <div class="module" data-image="http://www.intrawallpaper.com/static/images/dna_nano_tech-wide_dyyhibN.jpg">
+        <span class="loader"></span>
+    </div>
+    </div>
+</div>
+</body>
+</html>

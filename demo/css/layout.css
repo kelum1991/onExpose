@@ -1,0 +1,86 @@
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body{
+  -overflow: hidden;
+  margin: 0;
+}
+#container {
+  background: #eee;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  overflow: hidden;
+  -overflow-y: scroll;
+  -height: auto;
+  -max-height: 600px;
+}
+.left{
+  float: left;
+  margin-right: 4%;
+  margin-bottom: 4%;
+  width: 48%;
+  min-height: 200px;
+}
+.module {
+  width: 100%;
+  background: white;
+  position: relative;
+  float: left;
+  padding: 20px;
+  min-height: 200px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  background-size: cover;
+  background-position: center;
+}
+.loader{
+	background-image: url(../images/loader.gif);
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 100%;
+	height: 100%;
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: #fff;
+}
+.left:nth-child(even) {
+  margin-right: 0;
+}
+
+body {
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/blurry-blue.jpg);
+  background-size: cover;
+  padding: 30px;
+}
+
+.inview {
+  transform: translateY(150px);
+  animation: in-view 0.8s ease forwards;
+}
+
+.inview:nth-child(odd) {
+  animation-duration: 0.6s;
+}
+
+.already-visible {
+  transform: translateY(0);
+  animation: none;
+}
+
+@keyframes in-view {
+  to {
+    transform: translateY(0);
+  }
+}
+
+
+.row{
+  background: #333;
+  width: 100%;
+  height: 250px;
+  margin-bottom: 50px;
+}
