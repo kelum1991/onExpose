@@ -27,6 +27,9 @@ jQuery("div").on('viewport', {once:false}, function(event, inVpPartial, inVpFull
 });
 ```
 
+## Settings
+
+
 | Option        | Type          | Default  | Description                          |
 | ------------- |:-------------:| --------:| -------------------------------------|
 | handler       | string  | window   | You can set the element which user scrolls |
